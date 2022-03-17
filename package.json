@@ -1,0 +1,21 @@
+{
+    "name": "randomizer-bot",
+    "version": "1.0.0",
+    "description": "Randomize your lists",
+    "main": "index.ts",
+    "scripts": {
+        "start": "tsc && node build/index.js",
+        "dev": "nodemon src/index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Zirpoo",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.15",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "discord.js": "^13.6.0",
+        "dotenv": "^16.0.0"
+    }
+}
