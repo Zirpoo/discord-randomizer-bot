@@ -1,7 +1,8 @@
 import { Message } from "discord.js";
-import commands from "./index";
+import { DataSource } from "typeorm";
+import { commands } from "./index";
 
-export function run(message: Message) {
+export function run(message: Message, db: DataSource) {
     const commandInfos = [];
 
     for (const key in commands) {

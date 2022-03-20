@@ -1,8 +1,9 @@
 import { Message } from "discord.js";
+import { DataSource } from "typeorm";
 import { lists } from "./lists";
-import { messageWithUserMention } from "../channel.sendMessage";
+import { messageWithUserMention } from "../utils/discord/channel.messages";
 
-export function run(message: Message) {
+export function run(message: Message, db: DataSource) {
     const authorId = message.author.id;
 
     if (!(authorId in lists)) {
@@ -47,7 +48,7 @@ export function run(message: Message) {
 
 export const config = {
     commandInfo:
-        "` ?random <list name> <count> <unique>`\n_Displays one or multiple random choices from your list_",
+        "` ?random <list name> <count> <unique>`\n_Displays one or multiple random items from your list_",
     commandDetailedInfo:
-        "**<list name>**: The name you have given to one of your list\n**<count>**: A number of times it should randomise your list. Default: 1\n**<unique>**: Excludes a choice once it has been choosen. If set to Yes, the count cannot exeed the number of choices. Default: No",
+        "**<list name>**: The name you have given to one of your list\n**<count>**: A number of times it should randomise your list. Default: 1\n**<unique>**: Excludes an item once it has been choosen. If set to Yes, the count cannot exeed the number of items. Default: No",
 };

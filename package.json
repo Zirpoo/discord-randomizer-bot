@@ -6,19 +6,24 @@
     "scripts": {
         "start": "node build/index.js",
         "postinstall": "tsc",
-        "watch-node": "nodemon build/index.js",
+        "watch-node": "nodemon -e ts  --exec \"npm run postinstall && npm start\"",
         "watch-ts": "tsc -w",
         "deploy": "git add . && git commit -m \"Heroku\" && git push origin master"
     },
     "author": "Zirpoo",
     "license": "ISC",
     "devDependencies": {
+        "@types/node": "^17.0.21",
         "nodemon": "^2.0.15",
         "ts-node": "^10.7.0",
         "typescript": "^4.6.2"
     },
     "dependencies": {
+        "chalk": "^4.1.2",
         "discord.js": "^13.6.0",
-        "dotenv": "^16.0.0"
+        "dotenv": "^16.0.0",
+        "pg": "^8.7.3",
+        "reflect-metadata": "^0.1.13",
+        "typeorm": "^0.3.0"
     }
 }

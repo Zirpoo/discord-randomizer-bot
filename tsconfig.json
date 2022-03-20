@@ -3,6 +3,9 @@
         "module": "CommonJS",
         "target": "ES6",
         "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
         "outDir": "build"
     }
 }
